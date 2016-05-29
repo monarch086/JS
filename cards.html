@@ -1,4 +1,4 @@
-﻿<!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -12,12 +12,12 @@
   <div class = "mainScreen">
 	<h1>BlackJack</h1>
 	<div class = "upper">
-		<img src = "img/A_diam.png" alt = "cards" align = "middle">
-		
+		<img src = "img/Cards/2_pic.png" alt = "cards" align = "middle" class = "cards">
 	</div>
 	<div class = "bottom">
-		<img src = "img/A_diam.png" alt = "cards">
-		<img src = "img/8_heart.jpg" alt = "cards" align = "right">
+		<img src = "img/Cards/3_pic.png" alt = "cards" class = "cards" id = "left_card">
+		<input type="button" class = "button buttonStart" value="Start game" id = "btnStr">
+		<img src = "img/Cards/4_pic.png" alt = "cards" class = "cards" id = "right_card" align = "right">
 	</div>
 	<div class = "bottom_text">
 		<p style = "position: relative">
@@ -26,8 +26,8 @@
 		</p>
 	</div>
 	<div class = "buttons">
-		<input type="button" class = "button button1" value="Take one more card">
-		<input type="button" class = "button button2" value="Stop">
+		<input type="button" class = "button button1" value="Take one more card" id = "btnAdd">
+		<input type="button" class = "button button2" value="Stop" id = "btnStop">
 	</div>
   </div>
   
