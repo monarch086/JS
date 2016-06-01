@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 var rC = 0; //random card
 var userScore = 0;
@@ -6,18 +6,27 @@ var computerScore = 0;
 var riskIndex = 18; //до каких очков комп продолжает игру
 var stopGame = false; //флаг нажатия на кнопку "Стоп"
 
+var w = screen.width;
+var h = screen.height;
+document.getElementById('mainScreen').style.width = w + "px";
+document.getElementById('mainScreen').style.height = h + "px";
+
 document.getElementById('btnAdd').disabled = true;
 document.getElementById('btnStop').disabled = true;
-// document.getElementById('left_card').style.display = "none";
-// document.getElementById('right_card').style.display = "none";
-// document.getElementById('text_one').style.display = "none";
-// document.getElementById('text_two').style.display = "none";
-// document.getElementById('btnAdd').style.display = "none";
-// document.getElementById('btnStop').style.display = "none";
+
+document.getElementById('left_card').style.display = "none";
+document.getElementById('right_card').style.display = "none";
+document.getElementById('text_one').style.display = "none";
+document.getElementById('text_two').style.display = "none";
+document.getElementById('btnAdd').style.display = "none";
+document.getElementById('btnStop').style.display = "none";
 
 function addCard() {
     if (stopGame == false) {
-		rC = Math.floor(Math.random() * 13) + 2;
+        if (userScore == 0) {
+           document.getElementById('left_card').style.display = "inline";
+        }
+        rC = Math.floor(Math.random() * 13) + 2;
 		userScore += rC;
 		document.getElementById('text_one').firstChild.nodeValue = "Your score: " + userScore;
 		document.getElementById('left_card').src = "img/Cards/" + rC + "_pic.png";
@@ -28,6 +37,9 @@ function addCard() {
 }
 
 function computerStep() {
+    if (computerScore == 0) {
+        document.getElementById('right_card').style.display = "inline";
+    }
     if (computerScore < riskIndex) {
 		rC = Math.floor(Math.random() * 13) + 2;
 		computerScore += rC;
@@ -50,11 +62,11 @@ function verification() {
 	else if (userScore == 21 && computerScore < 21) {
 		document.getElementById('text_win').firstChild.nodeValue = "BLACKJACK!";
 		endGame();
-    }
+    	}
 	else if (userScore > 21 && computerScore <= 21) {
 		document.getElementById('text_win').firstChild.nodeValue = "You lost!";
 		endGame();
-    }
+    	}
 	else if (userScore < 21 && computerScore > 21) {
 		document.getElementById('text_win').firstChild.nodeValue = "You won!";
 		endGame();
@@ -89,27 +101,23 @@ function endGame() {
 }
 
 function stop() {
-    stopGame = true;
+	stopGame = true;
 	addCard();
 }
 
 function start() {
-    userScore = 0;
-    computerScore = 0;
+	userScore = 0;
+	computerScore = 0;
     
-	//document.getElementById('left_card').style.display = "inherit";
-	//document.getElementById('right_card').style.display = "inherit";
-	//document.getElementById('text_one').style.display = "inherit";
-	//document.getElementById('text_two').style.display = "inherit";
-	//document.getElementById('btnAdd').style.display = "inherit";
-	//document.getElementById('btnStop').style.display = "inherit";
+	document.getElementById('text_one').style.display = "inline";
+	document.getElementById('text_two').style.display = "inline";
+	document.getElementById('btnAdd').style.display = "inline";
+	document.getElementById('btnStop').style.display = "inline";
 	
-    document.getElementById('text_one').firstChild.nodeValue = "Your score: " + userScore;
-    document.getElementById('left_card').src = "img/Cards/2_pic.png";
-    
-    document.getElementById('text_two').firstChild.nodeValue = "Your opponent`s score: " + computerScore;
-    document.getElementById('right_card').src = "img/Cards/2_pic.png";
-	
+	document.getElementById('text_one').firstChild.nodeValue = "Your score: " + userScore;
+	document.getElementById('text_two').firstChild.nodeValue = "Your opponent`s score: " + computerScore;
+	document.getElementById('left_card').style.display = "none";
+	document.getElementById('right_card').style.display = "none";
 	document.getElementById('btnStr').style.display = "none";
 	document.getElementById('text_win').style.display = "none";
 	

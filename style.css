@@ -2,6 +2,9 @@
 body {
 	margin: 0;
 	padding: 0;
+	background-image: url(img/bg.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
 }
 
 h1{
@@ -12,10 +15,9 @@ h1{
 	padding: 30px;
 }
 
-.mainScreen{
+#mainScreen{
 	width: 1920px;
-	height: 1080px;
-	background-image: url(img/bg.jpg);
+	height: 1080px;	
 }
 
 .upper{
