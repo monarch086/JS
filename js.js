@@ -4,7 +4,16 @@ var rC = 0; //random card
 var userScore = 0;
 var computerScore = 0;
 var riskIndex = 18; //до каких очков комп продолжает игру
-var stopGame = false;
+var stopGame = false; //флаг нажатия на кнопку "Стоп"
+
+document.getElementById('btnAdd').disabled = true;
+document.getElementById('btnStop').disabled = true;
+// document.getElementById('left_card').style.display = "none";
+// document.getElementById('right_card').style.display = "none";
+// document.getElementById('text_one').style.display = "none";
+// document.getElementById('text_two').style.display = "none";
+// document.getElementById('btnAdd').style.display = "none";
+// document.getElementById('btnStop').style.display = "none";
 
 function addCard() {
     if (stopGame == false) {
@@ -88,6 +97,13 @@ function start() {
     userScore = 0;
     computerScore = 0;
     
+	//document.getElementById('left_card').style.display = "inherit";
+	//document.getElementById('right_card').style.display = "inherit";
+	//document.getElementById('text_one').style.display = "inherit";
+	//document.getElementById('text_two').style.display = "inherit";
+	//document.getElementById('btnAdd').style.display = "inherit";
+	//document.getElementById('btnStop').style.display = "inherit";
+	
     document.getElementById('text_one').firstChild.nodeValue = "Your score: " + userScore;
     document.getElementById('left_card').src = "img/Cards/2_pic.png";
     
