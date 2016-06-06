@@ -1,20 +1,26 @@
-
 body {
 	margin: 0;
 	padding: 0;
+	background-image: url(img/laminat.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
 }
 
 .header{
 	width: 1000px;
 	height: 70px;
 	border: 1px solid black;
+	border-bottom: 0;
 	margin: 0 auto;
+	margin-top: 10px;
+	border-radius: 10px 10px 0 0;
+	background-color: rgba(242, 249, 245, 0.7);
 }
 
 h1{
 	text-align: center;
 	font-size: 36pt;
-	color: #EC0C1F;
+	color: #442F20;
 	margin: 0;
 	padding: 0;
 }
@@ -26,12 +32,13 @@ h3{
 .main{
 	width: 1000px;
 	height: 500px;
-	border: 1px solid black;
+	//border: 1px solid black;
 	margin: 0 auto;
+	background-color: rgba(242, 249, 245, 0.7);
 }
 
 .dimension{
-	width: 300px;
+	width: 320px;
 	height: 500px;
 	border: 1px solid black;
 	padding-left: 10px;
