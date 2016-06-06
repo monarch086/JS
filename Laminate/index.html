@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="js.js" defer></script>
+</head>
+
+<body>
+  <div class="header">
+	<h1>Калькулятор ламината</h1>
+  </div>
+  <div class="main">
+	  <div class="dimension">
+		<h3>Введите размеры</h3>
+		<p>Длина комнаты, cм</p>
+		<input type="number" id="lRoom" min="1" max="1000" value="300">
+		<br>
+		<p>Ширина комнаты, cм</p>
+		<input type="number" id="wRoom" min="1" max="1000" value="300">
+		<br>
+		<hr>
+		<p>Длина ламината, мм</p>
+		<input type="number" id="lLam" min="1" max="300" value="1260">
+		<br>
+		<p>Ширина ламината, мм</p>
+		<input type="number" id="wLam" min="1" max="100" value="195">
+		<br>
+		<hr>
+		<p>Минимальная длина, мм</p>
+		<input type="number" id="minLen" min="1" max="300">
+		<br>
+		<p>Смещение следующего ряда, мм</p>
+		<input type="number" id="offset" min="1" max="300">
+		<br>
+		<p>Расположение: </p>
+		<br>
+		<p><input type="radio" name="laying" value="horizontal"> Горизонтальное</p>
+		<br>
+		<p><input type="radio" name="laying" value="vertical"> Вертикальное</p>
+		<br>
+		<p><input type="radio" name="laying" value="diagonal"> Диагональное</p>
+		<br>
+		<hr>
+		<input type="button" class = "button" value="Рассчитать" id = "btnCalculate">
+	  </div>
+	  <div class="schema">
+		<h3>Схема укладки ламината: </h3>
+		<canvas height='600' width='600' id='canv'>Обновите браузер</canvas>
+	  </div>
+  </div>
+</body>
+	
+
+
+</html>
