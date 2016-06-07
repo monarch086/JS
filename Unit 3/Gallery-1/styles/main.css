@@ -1,0 +1,56 @@
+body {
+	text-align: center;
+	font: 14pt "Comic Sans MS";
+}
+
+header h2 {
+	color: purple;
+}
+
+footer h3 {
+	color: darkcyan;
+}
+
+nav ul {
+	list-style: none;
+	width: 600px;
+	margin: 0 auto;
+}
+
+nav ul li {
+	float: left;
+	width: 200px;
+	color: navy;
+	padding: 5px 0px;
+}
+
+nav ul li:hover {
+	color: red;
+	cursor: pointer;
+	background-color: lightgreen;
+}
+
+#box1 img {
+	width: 200px;
+	height: 150px;
+	margin: 0px 3px;
+}
+
+#box2 img {
+	width: 100%;
+	max-width: 500px;
+}
+
+#box1 #left {
+	width: 80px;
+	height: 80px;
+	vertical-align: top;
+	margin: 40px 0px;
+}
+
+#box1 #right{
+	width: 80px;
+	height: 80px;
+	vertical-align: top;
+	margin: 40px 0px;
+}

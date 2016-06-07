@@ -29,29 +29,50 @@ function draw(){
 	
 	currentYPosition = 0;
 	
-	for(var i = 0; i < numberOfRows - 1; i++) {
-		//alert("i = " + i);
-		setCorrectionOfMin();
-		currentXPosition -= correctionOfMin;
-		while(currentXPosition < wRoom) {
-			context.moveTo(currentXPosition, currentYPosition);
-			context.lineTo(currentXPosition, (currentYPosition + wLam));
-			context.stroke();
-			context.moveTo(currentXPosition, currentYPosition);
-			currentXPosition += lLam;
+	if (offset == 0) {
+		for(var i = 0; i < numberOfRows; i++) {
+			//alert("i = " + i);
+			setCorrectionOfMin();
+			currentXPosition -= correctionOfMin;
+			while(currentXPosition < wRoom) {
+				context.moveTo(currentXPosition, currentYPosition);
+				context.lineTo(currentXPosition, (currentYPosition + wLam));
+				context.stroke();
+				context.moveTo(currentXPosition, currentYPosition);
+				currentXPosition += lLam;
+			}
+			correctionOfMin = 0;
+			remainder = currentXPosition - wRoom;
+			if(remainder < minLen) {
+				remainder = 0;
+				sumOfRemainder++;
+				currentXPosition = lLam;
+			}
+			else {
+				currentXPosition = remainder;
+			}
+			currentYPosition += wLam;
 		}
-		correctionOfMin = 0;
-		remainder = currentXPosition - wRoom;
-		if(remainder < minLen) {
-			remainder = 0;
-			sumOfRemainder++;
-			currentXPosition = lLam;
-		}
-		else {
-			currentXPosition = remainder;
-		}
-		currentYPosition += wLam;
 	}
+	else {
+		var startPoint = 0;
+		for(var i = 0; i < numberOfRows; i++) {
+			currentXPosition = startPoint;
+			while(currentXPosition < wRoom) {
+				context.moveTo(currentXPosition, currentYPosition);
+				context.lineTo(currentXPosition, (currentYPosition + wLam));
+				context.stroke();
+				context.moveTo(currentXPosition, currentYPosition);
+				currentXPosition += lLam;
+			}
+			startPoint += offset;
+			if(startPoint > lLam) {
+				startPoint -= lLam;
+			}
+			currentYPosition += wLam;
+		}
+	}
+
 }
 
 function setCorrectionOfMin() {
@@ -73,8 +94,9 @@ function initializeVars() {
 	wRoom = document.getElementById("wRoom").value;
 	lLam = document.getElementById("lLam").value / 10;
 	wLam = document.getElementById("wLam").value / 10;
-	numberOfRows = Math.ceil(wRoom / wLam);
+	numberOfRows = Math.ceil(lRoom / wLam);
 	minLen = document.getElementById("minLen").value / 10;
+	offset = document.getElementById("offset").value / 10;
 }
 
 function clear() {
