@@ -8,34 +8,35 @@ function write() {
 }
 
 function f() {
-    var lan = document.form.login.value,
-        valid = true;
-	
+    var lan = document.form.login.value;
+        	
 	//проверка на заполняемость имени
 	if (lan === "") {
-        document.alert("введите имя");
-        valid = false;
+        alert("Введите имя");
+        return false;
 	}
 	if (lan < 3) {
-		document.alert("короткое имя");
-		valid = false;
+		alert("Длина имени должна быть не менее 3 символов");
+		return false;
 	}
 	
 	//проверка на заполняемость пароля
 	if (document.form.pass.value === "") {
-        document.alert("введите pass");
-        valid = false;
+        alert("Введите пароль");
+        return false;
 	}
 	if (document.form.gun[1].checked === false) {
-		document.alert("выбирете оружие");
-		valid = false;
-	}
-	if (document.form.gun[1].checked) {
-        document.getElementById('out').innerHTML = document.form.gun[1].value;
-        document.getElementById('mech').style = "display: block";
+		alert("Выбирете оружие - меч");
+		return false;
 	}
 	
-	return valid;
+	//вывод информации и отображение меча
+	if (document.form.gun[1].checked) {
+        document.getElementById('out').innerHTML = document.form.gun[1].value;
+		document.getElementById('mech').style.display = "block";
+	}
+	
+	return true;
 }
 
 
