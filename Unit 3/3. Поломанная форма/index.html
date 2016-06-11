@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset = "UTF-8">
+	<title>Lesson 3. CSS</title>
+	<link rel = "stylesheet" href = "style.css">
+	<script src = "js.js" defer></script>
+</head>
+<body>
+	<div id="hero">
+		<div class = "gun" id = "luk"></div>
+		<div class = "gun" id = "mech"></div>
+		<div class = "gun" id = "palka"></div>
+	</div>
+	<form action = "" method = "POST" name = "form" id = "form">
+        <input type = "text" maxlength = "10" name = "login"> Введите имя героя </input><br><br>
+        <input type = "password" maxlength = "10" name = "pass"> Введите pass </input><br>
+        <input type = "radio" name = "gun" value = "1"> Лук </input>
+        <input type = "radio" name = "gun" value = "2"> Меч </input>
+        <input type = "radio" name = "gun" value = "3"> Палка </input>
+
+        <input type = "submit" onClick = "window.write();"><br>
+        <textarea cols = "30" rows = "5" id = "out"></textarea>
+	</form>
+	<button id = "push" onClick = "window.f();"> Показать </button>
+</body>
+</html>
